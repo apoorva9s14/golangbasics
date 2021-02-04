@@ -1,0 +1,14 @@
+If we define the package as package main, when we run such code, it creates
+	an executable.
+
+Every .go file in the same folder must have the same package name.
+
+
+
+
+
+
+
+Exported packages should start with Caps
+
+var var_name var_type = var_value

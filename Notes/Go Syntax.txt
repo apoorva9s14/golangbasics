@@ -1,0 +1,36 @@
+For Loop:
+for i := 0; i < 10; i++ {
+}
+
+While loop:
+for sum < 1000 {
+}
+
+If block:
+if x < 0 {
+}
+if v := math.Pow(x, n); v < lim {
+		return v
+	}
+v is limited to the if block or if else block
+
+Switch statement:
+switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X.")
+	case "linux":
+		fmt.Println("Linux.")
+	default:
+		fmt.Printf("%s.\n", os)
+	}
+
+Pointer:
+p := &i         // point to i
+fmt.Println(*p) // read i through the pointer
+*p = 21         // set i through the pointer
+fmt.Println(i)  // see the new value of i
+
+
+Type conversion:
+byte(variable_name)
+int(variable_name)

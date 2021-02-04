@@ -1,0 +1,8 @@
+
+grpc
+top down == function driven
+
+how to identify microservices:
+event drivem
+strict bounded context
+each service owns its own data
