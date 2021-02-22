@@ -1,0 +1,6 @@
+1. To know the git repository URL - 
+    git config --get remote.origin.url
+2. Stack vs heap - 
+    https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/
+3. git push to different repository - 
+    git push target_repo current_repo_branch:target_repo_branch

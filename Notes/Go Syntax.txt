@@ -1,11 +1,23 @@
+#############################################
+Variable declaration:
+var i int = 0
+i := 0
+
+var i int
+i = 0
+
+
+#############################################
 For Loop:
 for i := 0; i < 10; i++ {
 }
 
+#############################################
 While loop:
 for sum < 1000 {
 }
 
+#############################################
 If block:
 if x < 0 {
 }
@@ -14,6 +26,7 @@ if v := math.Pow(x, n); v < lim {
 	}
 v is limited to the if block or if else block
 
+#############################################
 Switch statement:
 switch os := runtime.GOOS; os {
 	case "darwin":
@@ -24,13 +37,76 @@ switch os := runtime.GOOS; os {
 		fmt.Printf("%s.\n", os)
 	}
 
+#############################################
 Pointer:
 p := &i         // point to i
 fmt.Println(*p) // read i through the pointer
 *p = 21         // set i through the pointer
 fmt.Println(i)  // see the new value of i
 
-
+#############################################
 Type conversion:
 byte(variable_name)
 int(variable_name)
+
+
+#############################################
+Make:
+a := make([]int, 5)  // len(a)=5
+b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+
+
+#############################################
+Map:
+var m1 map[int]int
+m1 = make(map[int]int)
+map[type_of_key]value_of_key
+m[key] = elem
+delete(m, key)
+elem, ok := m[key]    //if elem not present, ok is false, elem is 0
+
+
+#############################################
+Methods:
+Method is a function with receiver argument
+func (v Vertex) Abs() float64
+func (receiver_struct receiver_struct_name) method_name(inputs) return_type_of_method
+
+#############################################
+Struct:
+type Vertex struct {
+	X int
+	Y int
+}
+Anonymous Struct:
+person_name := struct {
+	firstName, lastName string
+	id int
+}{
+	firstName: "Apoorva"
+	lastName: "Laiti"
+	id: "111111"
+
+}
+
+#############################################
+Interface:
+type interface_name interface{
+	method1(method1_inputs) method1_returnvalue
+	method2(method2_inputs) method2_returnvalue
+}
+
+var interface_variable interface_name
+interface_variable = struct_which_implemented_interface_methods(fields_of_the_struct)
+//Now you can call the interface methods on this interface_variable
+//If the methods are implemented by the pointers of the struct,
+//initialise the interface_variable with that pointer
+fmt.Printf("(%v, %T)\n", interface_variable, interface_variable)
+//%v gives the interface_variable, i.e., the struct variable, %T gives the struct name
+
+empty interface
+i interface{}
+
+type assertions:
+interface_variable.(struct_name)
+gives the value of struct_variable
