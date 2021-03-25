@@ -1,12 +1,13 @@
 1. If we define the package as package main, when we run such code, it creates
 	an executable.
 2. Every .go file in the same folder must have the same package name.
-3. difference between pointer receiver and value receiver is:
+3. Go by default is pass by value, to change it to pass by reference, use pointers
+   difference between pointer receiver and value receiver is:
    value receiver - pass by value
    pointer receiver - pass by reference
 4. the type and value of the interface are dynamic.
    it takes the type of the underlying struct which implements this interface
-5. 
+5. there are no exceptions in go, only errors
 
 
 

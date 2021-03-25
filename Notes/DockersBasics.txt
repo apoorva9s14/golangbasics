@@ -1,0 +1,18 @@
+Docker Engine is a client server application. Components:
+Server ==> long-running program called a daemon process
+CLI client ==> the docker command
+A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.???
+???
+
+Dockerfile ==> instructions to build a Docker image
+
+docker run:
+1. Docker server checks for image in the local image registry,
+    if not found, searches in remote registry
+2. From remote registry image is downloaded and cached in local image registry
+3. Docker server allocates and mounts a read-write layer. This layer will become the container's writable layer.??
+???
+4. Docker server allocates the virtual network interface to the container.
+5. Networking system allocates an IP address for the virtual network interface. ???
+
+docker compose - 

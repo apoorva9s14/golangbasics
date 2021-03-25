@@ -39,7 +39,10 @@ switch os := runtime.GOOS; os {
 
 #############################################
 Pointer:
-p := &i         // point to i
+addr_of_var := &var         // point to i
+*addr_of_var == var         // pointer of address gives the variable
+
+
 fmt.Println(*p) // read i through the pointer
 *p = 21         // set i through the pointer
 fmt.Println(i)  // see the new value of i
