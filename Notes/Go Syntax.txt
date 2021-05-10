@@ -77,11 +77,24 @@ func (receiver_struct receiver_struct_name) method_name(inputs) return_type_of_m
 
 #############################################
 Struct:
+
+Defining Struct:
 type Vertex struct {
 	X int
 	Y int
 }
+
+Initialising struct
+vertex_struct_var := Vertex{
+		X: 1,
+		Y: 2,
+	}
+
+Getting and Setting values of struct
+vertex_struct_var.X 
 Anonymous Struct:
+
+Defining and initialising in the same line
 person_name := struct {
 	firstName, lastName string
 	id int
@@ -113,3 +126,34 @@ i interface{}
 type assertions:
 interface_variable.(struct_name)
 gives the value of struct_variable
+
+#############################################
+Defer Panics Recover
+
+Defer:
+defer function_name()
+// inside function_name we define what is to be deferred
+// Even if a panic occurs, defer will be called
+
+Panic:
+panic("Error panic occurred")
+
+Recover:
+defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered in f", r)
+        }
+    }()
+
+
+#############################################
+Channel
+
+ch_name := make(chan int)   // int is the type of value which the channel holds
+<- is the syntax for Channel
+if ch_name is on LHS, write to the channel
+if ch_name is on RHS, read from the channel
+
+close(ch_name)
+Buffered channels
+buff_ch_name := make(chan int,buff_szie)
