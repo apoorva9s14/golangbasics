@@ -51,7 +51,7 @@ fmt.Println(i)  // see the new value of i
 Type conversion:
 byte(variable_name)
 int(variable_name)
-
+reflect.TypeOf(variable_name) to know the type of variable
 
 #############################################
 Make:
@@ -157,3 +157,16 @@ if ch_name is on RHS, read from the channel
 close(ch_name)
 Buffered channels
 buff_ch_name := make(chan int,buff_szie)
+
+
+#############################################
+Strings
+
+Go strings are immutable
+
+Copy - copy(dest, src)
+
+initialise dest before hand as copy would copy only n numbers, where n is the minimum length of 
+dest and src.
+
+os.Args - array with the command line arguments

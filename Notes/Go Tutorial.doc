@@ -1,0 +1,121 @@
+###############################################################################
+GO Workspaces:
+In Go, programs are kept in a directory hierarchy that is called a workspace. 
+A workspace is root directory of your Go applications. 
+A workspace contains three subdirectories at its root:
+
+src – source files organized as packages.
+pkg – Go package objects. Compiled objects of each module
+bin – executable programs, i.e., binaries. 
+
+When we do import "<package-name>" Go looks for these packages in $GOROOT/src or $GOPATH/src directories. 
+If a precompiled package object is found, Go uses that instead. Executables link all those compiled 
+objects based on the modules used in the src code.
+
+go install - creates package objects
+go build - creates executables
+go run - to compile and run
+GOPATH - location of go workspaces.
+
+Every go program should be part of a package.
+If we define the package as package main, when we run such code, it creates an executable. 
+Every .go file in the same folder must have the same package name.
+All identifiers will be exported to other packages if the first letter of the identifier name starts with an uppercase.
+
+main function - entry point of execution
+
+go.mod - first line is the name or URL or the import path of the go module
+go mod tidy - adds any extra dependencies needed by the OS, architecture or the build.
+go.sum is just for validation purposes. It has the expected cryptographic checksums of the content of specific module versions,
+   so that we know if there is any change in the dependent module.
+2. Go by default is pass by value, to change it to pass by reference, use pointers
+   difference between pointer receiver and value receiver is:
+   value receiver - pass by value
+   pointer receiver - pass by reference
+
+   Meaning of pass by value:
+   When you pass an argument to a function, a copy of argument is created and that 
+   copy is passed to the function. To pass the original value, use pointers.
+   This helps in saving memory as we avoid creating unnecessary copies while calling
+   functions.
+
+   Pointer - is a memory address to the variable it points to.
+###############################################################################
+Interfaces:
+   Interface is similar to Struct, where Struct holds variables, Interface holds method signatures.
+   Interface helps to acheive run time polymorphism, i.e.,call is resolved at run time.
+   Interface talks about the behaviour of the object
+
+   An interface is two things:
+   It is a set of methods,
+   but it is also a type
+
+   Types of Int, String, array are all concrete, as in, you know exactly what it is and what you can do with it.
+   Interface is abstract type
+   the type and value of the interface are dynamic.
+   it takes the type of the underlying struct which implements this interface, i.e., you can assign an expression 
+   to an interface only if its type satisfies the interface. 
+   Empty Interface:
+      Interface with zero methods. It is a general container type.
+
+
+4. there are no exceptions in go, only errors
+   Defers happen Last in First out
+   Recover is only helpful with Defers. Defer + anonymous fn + recover
+
+5. Channels are communication channels for goroutines.
+   You can write to the channels and wait on the channel to read input from the channel.
+   If you read from empty channel, it's a deadlock
+   Difference between channels and buffered channels:
+      Channels are blocking as they only store one item, 
+      Only one item can be read or write at a time.
+      If you want to send a value to the channel, it is blocked till another goroutine receives this value.
+      For buffered channel you have a buffer of values. Only if the buffer is full, it gets blocked, i.e., deadlock.
+
+6. Though Go is statically typed language, while declaring a variable you can omit the data type of it,
+   as go uses type inference. It infers the datatype from the data we assing to variable.
+
+   In Go, variables are always initialized to a well-defined value, if no value is sepcified, the zero
+   value is picked.
+
+7. Difference between array and slice
+   Array is immutable. 
+   Slice syntax - var mySlice3 := make([]int, 4, 4) 
+
+###############################################################################
+Struct
+Struct is a datatype in golang which structures the data
+The data consists of field names and the datatypes of the fields
+
+
+
+###############################################################################
+Routing in golang
+
+To implement a server, we need two things: Port and routes.
+
+flow of control for a HTTP request looks like:
+Router => Middleware Handler => Application Handler
+
+1. Router in golang - ServeMux
+   which is a HTTP request router, It matches the URL of each incoming request against a list of 
+   registered patterns and calls the handler for the pattern that most closely matches the URL.
+2. Middleware - Shared functionality that you want to run for many (or even all) HTTP requests.
+   Middleware should satisfy http.Handler interface
+   Build a chain of handlers containing both middleware handler and normal application handler, 
+   which can be registered with a router.
+
+3. Handlers are responsible for writing response headers and bodies.
+   Any object can be a handler, so long as it satisfies the http.Handler interface. 
+   It must have a ServeHTTP method with the following signature: ServeHTTP(http.ResponseWriter, *http.Request)      
+
+
+Exported packages should start with Caps
+
+###############################################################################
+Marshalling, Unmarshalling <---> Encoding, Decoding:
+
+Marshalling - Go objects to JSON, It returns a []byte of JSON data
+Encoding - 
+
+

@@ -23,7 +23,7 @@ func wordcount(s string) map[string]int {
 	return m
 }
 
-func main() {
+func firstGoPgm() {
 	// wc.Test(WordCount)
 	fmt.Println(wordcount("A man a plan a canal panama A"))
 }

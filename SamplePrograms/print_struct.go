@@ -23,7 +23,7 @@ func toggleemployeestatus(emp *Emp) {
 	emp.status = !emp.status
 	fmt.Println(emp.status)
 }
-func main() {
+func printStruct() {
 	myname := Name{}
 	myname.id = 10
 	myemp := new(Emp)

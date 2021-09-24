@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func main() {
+func stringSplit() {
 	var inp_str = "Culpa pariatur commodo cillum nulla duis veniam esse incididunt officia ex deserunt Occaecat sunt do elit dolor mollit Ipsum ullamco cupidatat amet nostrud enim excepteur duis do ex quis labore ut dolore Excepteur ut nostrud elit ut consectetur Elit adipisicing Lorem sit amet sit reprehenderit Lorem aliquip dolore id commodo ut Id quis irure ut eiusmod aliqua labore laborum amet magna aliqua mollit mollit laboris"
 	var myarray = strings.Split(inp_str, " ")
 	fmt.Printf("%T", myarray[0])
