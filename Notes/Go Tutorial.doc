@@ -119,3 +119,14 @@ Marshalling - Go objects to JSON, It returns a []byte of JSON data
 Encoding - 
 
 
+
+###############################################################################
+Goroutines
+
+Goroutines are cheap. Because of the runtime’s ability to multiplex goroutines onto a small pool 
+of threads (which you don’t have to manage), hundreds of thousands, millions of goroutines are easily accommodated. 
+
+
+###############################################################################
+Panic Defer Recover
+Defer gets executed just before the function returns

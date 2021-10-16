@@ -6,3 +6,25 @@ how to identify microservices:
 event drivem
 strict bounded context
 each service owns its own data
+
+###############################################################################
+Inversion of Control
+Separate what-to-do part from when-to-do part.
+Ensure that when part knows as little as possible about what part; and vice versa.
+There are several techniques possible for each of these steps based on the technology/language you are using for your implementation.
+
+The inversion part of the Inversion of Control (IoC) is the confusing thing; because inversion is the relative term. The best way to understand IoC is to forget about that word!
+
+--
+
+Examples
+
+Event Handling. Event Handlers (what-to-do part) -- Raising Events (when-to-do part)
+Dependency Injection. Code that constructs a dependency (what-to-do part) -- instantiating and injecting that dependency for the clients when needed, which is usually taken care of by the DI tools such as Dagger (when-to-do-part).
+Interfaces. Component client (when-to-do part) -- Component Interface implementation (what-to-do part)
+xUnit fixture. Setup and TearDown (what-to-do part) -- xUnit frameworks calls to Setup at the beginning and TearDown at the end (when-to-do part)
+
+
+###############################################################################
+Points to be followed:
+1. Every fuction should have single responsibility
