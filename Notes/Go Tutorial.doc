@@ -1,16 +1,14 @@
-###############################################################################
 GO Workspaces:
 In Go, programs are kept in a directory hierarchy that is called a workspace. 
 A workspace is root directory of your Go applications. 
-A workspace contains three subdirectories at its root:
 
-src – source files organized as packages.
-pkg – Go package objects. Compiled objects of each module
-bin – executable programs, i.e., binaries. 
+A workspace contains three subdirectories at its root:
+src - source files organized as packages.
+pkg - Go package objects. 
+bin - Compiled objects of each module executable programs, i.e., binaries. 
 
 When we do import "<package-name>" Go looks for these packages in $GOROOT/src or $GOPATH/src directories. 
-If a precompiled package object is found, Go uses that instead. Executables link all those compiled 
-objects based on the modules used in the src code.
+If a precompiled package object is found, Go uses that instead. Executables link all those compiled objects based on the modules used in the src code.
 
 go install - creates package objects
 go build - creates executables
@@ -58,6 +56,8 @@ Interfaces:
    Empty Interface:
       Interface with zero methods. It is a general container type.
 
+   A slice holds the reference to an array. Similarly, interfaces dynamically hold a reference to the underlying type
+   which implements the interface.
 
 4. there are no exceptions in go, only errors
    Defers happen Last in First out
@@ -82,11 +82,38 @@ Interfaces:
    Array is immutable. 
    Slice syntax - var mySlice3 := make([]int, 4, 4) 
 
+8. Polymorphism in Go is achieved with the help of interfaces.
+
 ###############################################################################
 Struct
-Struct is a datatype in golang which structures the data
+Struct is a datatype in golang which contains the blueprint of data the structure will hold.
 The data consists of field names and the datatypes of the fields
 
+
+###############################################################################
+Variadic functions
+
+A variadic function accepts an infinite number of arguments and all these arguments are stored in a slice.
+
+
+###############################################################################
+Slices and Arrays differences
+
+Slices are sequences of typed data. Abstraction on top of array.
+Array elements are indexed. Arrays are inflexible as they have fixed size. So an Abstraction
+is built on top of array which is Slice. 
+
+A slice is not an array. A slice describes a piece of an array.
+Slice points to the unerlying array and the capacity of slice is the size of the array.
+
+###############################################################################
+Methods and Functions differences
+
+var_name.method_name()
+function_name(var_name)
+
+Same method_name can be used for different variables, but the function name
+should be unique.
 
 
 ###############################################################################
@@ -109,8 +136,20 @@ Router => Middleware Handler => Application Handler
    Any object can be a handler, so long as it satisfies the http.Handler interface. 
    It must have a ServeHTTP method with the following signature: ServeHTTP(http.ResponseWriter, *http.Request)      
 
+###############################################################################
+Errors:
 
-Exported packages should start with Caps
+An error is return value in golang which is returned if something unexpected happened.
+
+"error" is builtin type in golang.
+type error interface {
+  Error() string
+}
+
+How to create a new error type:
+any type that implements Error() function is an "error" type.
+errors.New("Custom error type")
+
 
 ###############################################################################
 Marshalling, Unmarshalling <---> Encoding, Decoding:
@@ -129,4 +168,31 @@ of threads (which you don’t have to manage), hundreds of thousands, millions o
 
 ###############################################################################
 Panic Defer Recover
-Defer gets executed just before the function returns
+Defer gets executed just before the function returns or in case of panic
+
+
+###############################################################################
+CONCURRENCY:
+
+Concurrent programming is - programs fight for the cpu time
+Parallel programming - independent CPU times are available for the programs.
+
+Parallel programming is to specifically refer to the simultaneous execution of concurrent tasks on different processors or cores. 
+Thus, all parallel programming is concurrent, but not all concurrent programming is parallel.
+
+Reference - https://www.mineiros.io/blog/guide-to-multihreading-and-multiprocessing
+
+What is a Process:
+A process is an instance of a program.
+
+A computer program in languages like C, java or Go, it is just a text file. As the computer only understands binary instructions composed of 0s and 1s, the code needs to be compiled to machine language. When a compiled program is sent to OS to handle, OS allocates:
+memory address space (where process�s heap and stacks will be located),
+program counter, 
+PID (process id). 
+
+A process has at least one thread known as primary thread, primary thread can create multiple other threads. When the primary thread is done with its execution, process exits.
+In nutshell, a process is a program in the memory. 
+
+Thread:
+Thread is a light-weight process inside a process. It is the actual executor of a piece of code. It has access to memory provided by the process, OS resources, and other things.
+A stack is created at runtime and is normally of a fixed size, preferably 1-2 MB. While the stack of a thread can be used by only that thread and will not be shared with other thread. A heap is a property of a process and it is available to use by any thread. Heap is a shared memory space where data from one thread can be access by other threads as well. Threads share the heap, but can have their own stack.

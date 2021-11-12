@@ -7,6 +7,8 @@ event drivem
 strict bounded context
 each service owns its own data
 
+SOA - Does not consider opex, Operations, Not for cloud
+microservices came into picture for cloud
 ###############################################################################
 Inversion of Control
 Separate what-to-do part from when-to-do part.

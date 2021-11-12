@@ -33,10 +33,15 @@ switch os := runtime.GOOS; os {
 		fmt.Println("OS X.")
 	case "linux":
 		fmt.Println("Linux.")
+		fallthrough
+	case "fallthroughos":
+		fmt.Println("fallthrough OS.")
 	default:
 		fmt.Printf("%s.\n", os)
 	}
 
+If a "case" block ends with fallthrough, the next block will always get executed irrespective of the 
+condition success or failure. 
 #############################################
 Pointer:
 addr_of_var := &var         // point to i
@@ -63,11 +68,28 @@ b := make([]int, 0, 5) // len(b)=0, cap(b)=5
 Map:
 var m1 map[int]int
 m1 = make(map[int]int)
-map[type_of_key]value_of_key
+map[type_of_key]type_of_value_of_key
 m[key] = elem
 delete(m, key)
 elem, ok := m[key]    //if elem not present, ok is false, elem is 0
 
+#############################################
+Slices and Arrays:
+
+Slice:
+s := make([]byte, 5, 5)
+len(s) == 5
+cap(s) == 5
+If capacity is omitted, it is equal to length.
+Array:
+b := [2]string{"Penn", "Teller"}
+b := [...]string{"Penn", "Teller"}
+var b [2]string
+
+Extend a slice:
+n := len(slice)
+slice = slice[0 : n+1]
+slice[n] = element
 
 #############################################
 Methods:
