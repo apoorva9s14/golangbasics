@@ -33,7 +33,7 @@ switch os := runtime.GOOS; os {
 		fmt.Println("OS X.")
 	case "linux":
 		fmt.Println("Linux.")
-		fallthrough
+		fallthr]
 	case "fallthroughos":
 		fmt.Println("fallthrough OS.")
 	default:
@@ -71,7 +71,10 @@ m1 = make(map[int]int)
 map[type_of_key]type_of_value_of_key
 m[key] = elem
 delete(m, key)
-elem, ok := m[key]    //if elem not present, ok is false, elem is 0
+elem, ok := m[key]    // if elem not present, ok is false, elem is 0
+                      // ok can be omitted altogether, to get just the value
+					  // ok helps distinguish between actual '0' value or if it is the 
+					  // value for element not found.
 
 #############################################
 Slices and Arrays:
