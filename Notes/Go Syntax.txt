@@ -101,6 +101,12 @@ func (v Vertex) Abs() float64
 func (receiver_struct receiver_struct_name) method_name(inputs) return_type_of_method
 
 #############################################
+Functions
+
+Variadic functions
+Accepts variable number of arguments.
+Just like ** is unpacking operator in python, ... is unpacking operator in golang
+#############################################
 Struct:
 
 Defining Struct:
@@ -130,6 +136,29 @@ person_name := struct {
 
 }
 
+Struct Embedding:
+Gives Composition of types
+
+type base struct {
+    num int
+}
+type container struct {
+    base
+    str string
+}
+An embedding looks like a field without a name.
+
+The fields of the embedded struct can be directly
+accessed from the container's struct var.
+
+co := container{
+        base: base{
+            num: 1,
+        },
+        str: "some name",
+    }
+co.num  // would give the base's num field
+
 #############################################
 Interface:
 type interface_name interface{
@@ -151,6 +180,7 @@ i interface{}
 type assertions:
 interface_variable.(struct_name)
 gives the value of struct_variable
+
 
 #############################################
 Defer Panics Recover

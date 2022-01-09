@@ -1,6 +1,0 @@
-Convert blocking calls to a non-blocking execution.
-Lift off I/O operations from the execution thread to the system's kernel.
-
-Since most modern kernels are multi-threaded, they can handle multiple operations executing in the background 
-concurrenlty. When one of these operations completes, the kernel notifies the main thread and then the appropriate callback 
-is eventually executed.
