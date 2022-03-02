@@ -20,3 +20,14 @@ Types of resources:
 Aliases:
 Symlinks that hold reference to a remote resource and enable interoperability and reuse of a resource instance across the platform. 
 For example, you can create an instance of a service in a resource group and then reuse it from any available Cloud Foundry region by creating an alias in an org/space in those regions.
+
+Scoped Token:
+Scoped token helps to delegate some of your permissions to another user.
+Scoped token identifies as a user but is limited to a set of actions by its scope.
+
+IAM - Identify, authenticate, and authorize
+Difference between Authenticate and Authorize:
+    Authentication verifies if the users really are who they represent themselves to be. 
+    Authorization determines what resources a user can access,
+        user permission to access different levels of information.
+    Authorization takes place after Authentication.

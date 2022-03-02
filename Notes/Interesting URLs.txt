@@ -2,3 +2,4 @@ https://medium.com/@simplyianm/why-gos-structs-are-superior-to-class-based-inher
 Middleware - https://www.alexedwards.net/blog/making-and-using-middleware
 Go Interfaces - https://www.alexedwards.net/blog/interfaces-explained
 	     - https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go
+Go Styling - https://dave.cheney.net/practical-go/presentations/qcon-china.html
