@@ -30,7 +30,7 @@ func zeroptr(iptr *int) {
 func pointerEx() {
 	i := 1
 	fmt.Println("initial:", i)
-	fmt.Println("Address Initial:", &i)
+	fmt.Println("Address of Initial:", &i)
 
 	zeroval(i)
 	fmt.Println("zeroval:", i)
