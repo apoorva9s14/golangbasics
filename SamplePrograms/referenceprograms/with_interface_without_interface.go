@@ -1,4 +1,4 @@
-package samples
+package referenceprograms
 
 import (
 	"fmt"

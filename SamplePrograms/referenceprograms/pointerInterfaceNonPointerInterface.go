@@ -1,5 +1,5 @@
 // Sample of a pointer type may call the methods of its associated value type, but not vice versa
-package samples
+package referenceprograms
 
 import "fmt"
 

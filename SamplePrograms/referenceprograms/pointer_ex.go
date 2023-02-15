@@ -2,7 +2,7 @@
 // allowing you to pass references to values and records
 // within your program.
 
-package samples
+package referenceprograms
 
 import "fmt"
 
