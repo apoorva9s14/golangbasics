@@ -1,4 +1,4 @@
-package referenceprograms
+package referenceprogramsexternal
 
 import (
 	"encoding/json"

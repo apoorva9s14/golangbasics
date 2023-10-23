@@ -5,7 +5,7 @@
 // number of  values without a corresponding receiver for
 // those values.
 
-package referenceprograms
+package referenceprogramsexternal
 
 import "fmt"
 

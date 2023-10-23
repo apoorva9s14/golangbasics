@@ -7,7 +7,7 @@
 // Using pointers as struct fields helps to differentiate
 // if there is no value the pointer would be nil
 // else it would hold a value address
-package referenceprograms
+package referenceprogramsexternal
 
 import "fmt"
 
