@@ -4,3 +4,7 @@ Go Interfaces - https://www.alexedwards.net/blog/interfaces-explained
 	     - https://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go
 Go Styling - https://dave.cheney.net/practical-go/presentations/qcon-china.html
 Go Articles - https://github.com/golang/go/wiki/Articles
+
+TODO:
+https://medium.com/golangspec
+https://dev.to/nikl/how-to-build-a-containerized-microservice-in-golang-a-step-by-step-guide-with-example-use-case-5ea8

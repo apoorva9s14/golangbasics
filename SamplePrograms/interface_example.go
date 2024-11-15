@@ -8,7 +8,7 @@ type sampleInterface interface {
 }
 
 // here both the samples implement the interface
-// based on the value of int passed, we decide with sample struct to use
+// based on the value of int passed, we decide which sample struct to use
 type sample struct {
 	x int
 	y string

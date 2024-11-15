@@ -1,0 +1,3 @@
+https://levelup.gitconnected.com/write-go-like-a-senior-engineer-eee7f03a1883
+https://go.dev/doc/effective_go
+It’s more effective to write less code, which will reduce the chance of failure. Senior developers know you write code when you must and when you have validated the requirements.
