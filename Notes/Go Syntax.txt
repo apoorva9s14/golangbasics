@@ -34,8 +34,9 @@ switch os := runtime.GOOS; os {
 	case "linux":
 		fmt.Println("Linux.")
 		fallthr]
-	case "fallthroughos":
+	case "someOtherOs":
 		fmt.Println("fallthrough OS.")
+		fallthrough
 	default:
 		fmt.Printf("%s.\n", os)
 	}
@@ -106,6 +107,7 @@ Functions
 Variadic functions
 Accepts variable number of arguments.
 Just like ** is unpacking operator in python, ... is unpacking operator in golang
+func sum(nums ...int) int {}
 #############################################
 Struct:
 
